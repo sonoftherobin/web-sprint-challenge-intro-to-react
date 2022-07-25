@@ -2,6 +2,17 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import styled from "styled-components";
 import Character from "./components/Character.js"
+import CharacterDetail from './components/Details.js';
+const MainDiv = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content:center;
+align-items: center;
+height: 100vh;
+`
+const StyledHeader =styled.h1`
+width: 100%;
+`
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
@@ -21,11 +32,12 @@ const App = () => {
   },[])
 
   return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-      {characters.map(jedi =>
-        <Character name ={jedi.name} dob ={jedi.birth_year} key ={jedi.index} world ={jedi.homeworld} films ={jedi.films}/>)}
-    </div>
+    <MainDiv className="App">
+       <StyledHeader className="Header">Long Long Ago...</StyledHeader>
+          {characters.map(jedi =>
+            <Character  
+            name ={jedi.name} dob ={jedi.birth_year} key ={jedi.index} world ={jedi.homeworld} films ={jedi.films}/>)}
+    </MainDiv>
   );
 }
 

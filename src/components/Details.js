@@ -6,6 +6,9 @@ export default function CharacterDetail(props){
                 <h2>{props.name}</h2>
                     <img src ={props.world}/>
                     <p>{props.films}</p>
+                    <nav>
+                        <a>Previous</a><a>Next</a><a>lose</a>
+                    </nav>
 
 
           </div>}
